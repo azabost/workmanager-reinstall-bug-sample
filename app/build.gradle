@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.azabost.wm.bug.sample"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("$rootDir/debug-build-signing.jks")
+            storePassword "PNuYmKq5iJXINns2x3v"
+            keyAlias "debug"
+            keyPassword "LHHZFKZdQdQ4k9y7mk8"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    
+    implementation "androidx.multidex:multidex:$multidex"
+
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    implementation "com.google.dagger:dagger-android:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+    implementation "com.squareup.inject:assisted-inject-annotations-dagger2:$assistedInject"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:$assistedInject"
+
+    implementation "androidx.arch.core:core-common:$androidxArch"
+    implementation "androidx.arch.core:core-runtime:$androidxArch"
+    implementation "androidx.core:core-ktx:$androidxCore"
+    implementation "androidx.annotation:annotation:$androidAnnotation"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle"
+
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+    implementation "androidx.work:work-runtime:$work"
+    implementation "androidx.work:work-runtime-ktx:$work"
+
+    // Workaround #2: comment out the line below
+    implementation "androidx.work:work-gcm:$work"
+
+    debugImplementation "com.amitshekhar.android:debug-db:1.0.6"
+    
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+apply plugin: "com.google.gms.google-services"

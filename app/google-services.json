@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "272700861484",
+    "firebase_url": "https://wm-reinstall-bug-sample.firebaseio.com",
+    "project_id": "wm-reinstall-bug-sample",
+    "storage_bucket": "wm-reinstall-bug-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272700861484:android:fc884106a381ea36f0f589",
+        "android_client_info": {
+          "package_name": "com.azabost.wm.bug.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272700861484-8vuphsig9tre27d8msgmdfmfucsecr1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.azabost.wm.bug.sample",
+            "certificate_hash": "133e5c7fc7e7ff068b7227a20684c659bfd5a4ca"
+          }
+        },
+        {
+          "client_id": "272700861484-g5kjh5cpl7atoa6ssnpq2ga9l3u5d3s3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWxK977RZSq0sQtyZ-cV-KdvPK5xBr3uA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272700861484-g5kjh5cpl7atoa6ssnpq2ga9l3u5d3s3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
